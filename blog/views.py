@@ -6,14 +6,9 @@ from .models import Post
 
 
 def post_list(request):
-<<<<<<< HEAD
-	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-	return render(request, 'blog/post_list.html', {'posts': posts})
-=======
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_detail (request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post':post})
->>>>>>> eaa2b0dda9c0d5a75d69940cb87cff03dd6cc5d1
